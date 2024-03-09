@@ -24,8 +24,14 @@
                 </div>
  
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('config')" :active="request()->routeIs('config')">
+                    <x-nav-link :href="route('config.edit')" :active="request()->routeIs('config.edit')">
                         {{ __('Configurations') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('yarn.index')" :active="request()->routeIs('yarn.index')">
+                        {{ __('Yarn') }}
                     </x-nav-link>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BasicConfigController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,10 +28,15 @@ Route::get('/quotation', function () {
     return view('quotation');
 })->middleware(['auth', 'verified'])->name('quotation');
 
-Route::get('/config', function () {
-    return view('config.edit');
-})->middleware(['auth', 'verified'])->name('config');
+Route::middleware('auth')->group(function () {
+    Route::get('/config', [BasicConfigController::class, 'edit'])->name('config.edit');
+    Route::patch('/config', [BasicConfigController::class, 'update'])->name('config.update');
+});
 
+Route::middleware('auth')->group(function () {
+    Route::get('/yarn', [BasicConfigController::class, 'edit'])->name('yarn.index');
+    Route::patch('/yarn', [BasicConfigController::class, 'update'])->name('yarn.update');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
