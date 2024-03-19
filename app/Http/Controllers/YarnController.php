@@ -7,15 +7,22 @@ use App\Models\Yarn;
 
 class YarnController extends Controller
 {
-    public function store(Request $request)
+    public function index()
     {
-        'type' => 'required|string';
-        'price' => 'required|decimal';
-        'supplier' => 'required|string';
-
-        $yarn = Yarn:Create($request->all());
-
-       return redirect()->route('yarn.index')->with('status', 'yarn-added');
+        return view('yarn.index');
     }
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'type' => 'required|string',
+            'price' => 'required|numeric',
+            'supplier' => 'required|string',
+
+        ]);
+
+        $yarn = Yarn::create($request->all());
+
+        return redirect()->route('yarn.index')->with('status', 'yarn-added');
+    }
 }
