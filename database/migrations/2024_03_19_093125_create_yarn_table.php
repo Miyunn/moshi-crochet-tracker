@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('yarn', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->double('price');
+            $table->string('supplier');
+            $table->boolean('enabled')->default(true);
             $table->timestamps();
         });
     }
