@@ -17,21 +17,24 @@
             <x-text-input id="type" name="type" type="text" class="mt0 block w-full" />
         </div>
 
-      <div>
+        <div>
             <x-input-label for="price" :value="__('Price')" />
             <x-text-input id="price" name="price" type="number" class="mt0 block w-full" />
-      </div>
+        </div>
 
         <div>
             <x-input-label for="supplier" :value="__('Supplier')" />
             <x-text-input id="supplier" name="supplier" type="text" class="mt0 block w-full" />
         </div>
-       
-        <div>
-            <input type=hidden value=0 name="enabled" id="enabled"> 
-            <input type=checkbox value=1 name="enabled" id="enabled" class="">
-            <label for="enabled" class="text-sm text-gray-900 dark:text-gray-100">{{ __('Enabled') }}</label>
+ 
+        <div class="flex items-center">
+            <input id="enabled" name="enabled" type="hidden" value="0">
+            <input checked id="enabled" name="enabled" type="checkbox" value="1" class="w-4 h-4 text-blue-600 
+            bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 
+            dark:bg-gray-700 dark:border-gray-600">
+            <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-600 dark:text-gray-400">Display in quotation</label>
         </div>
+
 
         <x-primary-button>{{ __('Save') }}</x-primary-button>
 
