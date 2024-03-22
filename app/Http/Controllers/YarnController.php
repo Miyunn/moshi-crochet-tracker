@@ -18,6 +18,7 @@ class YarnController extends Controller
             'type' => 'required|string',
             'price' => 'required|numeric',
             'supplier' => 'required|string',
+            'enabled' => 'required|boolean',
 
         ]);
 

@@ -34,21 +34,15 @@ Route::middleware('auth')->group(function () {
 });
 
 
-// Yarn Config routes
-/*
-Route::get('/yarn', function () {
-    return view('yarn.index');
-})->middleware(['auth', 'verified'])->name('yarn.index');
- */
-
-//Yarn Config (CRUD)
+//Yarn routes
 Route::middleware('auth')->group(function () {
     Route::get('/yarn', [YarnController::class, 'index'])->name('yarn.index');
     Route::post('/yarn', [YarnController::class, 'store'])->name('yarn.store');
+    Route::patch('yarn', [YarnController::class, 'update'])->name('yarn.update');
 });
 
 
-
+//Profile routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
