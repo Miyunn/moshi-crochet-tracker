@@ -26,18 +26,11 @@
             <x-input-label for="supplier" :value="__('Supplier')" />
             <x-text-input id="supplier" name="supplier" type="text" class="mt0 block w-full" />
         </div>
-
-        <input type=hidden value=0 name="enabled" id="enabled"> 
-
+       
         <div>
-            <x-bladewind::checkbox
-                color="green"
-                checked
-                label="Visible in quotations generator"
-                name="enabled"
-                id="enabled"
-                value=1
-            />
+            <input type=hidden value=0 name="enabled" id="enabled"> 
+            <input type=checkbox value=1 name="enabled" id="enabled" class="">
+            <label for="enabled" class="text-sm text-gray-900 dark:text-gray-100">{{ __('Enabled') }}</label>
         </div>
 
         <x-primary-button>{{ __('Save') }}</x-primary-button>
