@@ -17,6 +17,14 @@
         @csrf
         @method('patch')
 
+        <div class="flex items-center">
+            <input id="is_active" name="is_active" type="hidden" value="0">
+            <input {{ $basicConfig->is_active == 1 ? 'checked' : '' }} id="is_active" name="is_active" type="checkbox" value="1" class="w-4 h-4 text-blue-600 
+            bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 
+            dark:bg-gray-700 dark:border-gray-600">
+            <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-600 dark:text-gray-300">Autofill for quotations</label>
+        </div>
+
         <div>
             <x-input-label for="hourly_rate" :value="__('Hourly Rate (Labour)')" />
             <x-text-input id="hourly_rate" name="hourly_rate" type="number" class="mt-1 block w-full" :value="old('hourly_rate', $basicConfig->hourly_rate)" required autofocus autocomplete="name" />

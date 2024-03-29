@@ -24,6 +24,7 @@ class BasicConfigController extends Controller
             'yarn_delivery_price' => 'required|numeric',
             'hourly_rate' => 'required|numeric',
             'default_package_cost' => 'required|numeric',
+            'is_active' => 'required|boolean',
         ]));
 
         return redirect()->route('config.edit')->with('status', 'config-updated');
