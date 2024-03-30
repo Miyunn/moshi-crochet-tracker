@@ -18,13 +18,13 @@
         </div>
 
         <div>
-            <x-input-label for="price" :value="__('Price')" />
-            <x-text-input id="price" name="price" type="number" class="mt0 block w-full" />
+            <x-input-label for="supplier" :value="__('Supplier')" />
+            <x-text-input id="supplier" name="supplier" type="text" class="mt0 block w-full" />
         </div>
 
         <div>
-            <x-input-label for="supplier" :value="__('Supplier')" />
-            <x-text-input id="supplier" name="supplier" type="text" class="mt0 block w-full" />
+            <x-input-label for="price" :value="__('Price')" />
+            <x-text-input id="price" name="price" type="number" class="mt0 block w-full" />
         </div>
  
         <div class="flex items-center">
