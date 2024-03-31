@@ -1,21 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Manage Yarn') }}
-        </h2>
+        <div class="flex items-center justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Manage Yarn') }}
+            </h2>
+            @include('yarn.partials.control-yarn')
+        </div>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('yarn.partials.add-yarn-form')
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
+    <div class="pt-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="min-width:100%">
@@ -24,4 +17,16 @@
             </div>
         </div>
     </div>
+
+    {{--
+    <div class="pt-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    @include('yarn.partials.add-yarn-form')
+                </div>
+            </div>
+        </div>
+    </div>
+    --}}
 </x-app-layout>
