@@ -9,8 +9,8 @@
         </p>
     </header>
 
-    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600 overflow-x-auto mt-6">
-        <thead class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+    <table class="table min-w-full divide-y divide-gray-200 dark:divide-gray-600 overflow-x-auto mt-6">
+        <thead class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300">
             <tr>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                    Type
@@ -27,7 +27,7 @@
             </tr>
         </thead>
 
-        <tbody class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+        <tbody class="border-gray-300 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-300">
             <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
