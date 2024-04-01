@@ -28,86 +28,46 @@
         </thead>
 
         <tbody class="border-gray-300 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-300">
-            <tr>
-                <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="flex items-center">
-                        <div>
-                            <div class="text-m">
-                               Milk Cotton 
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                Yo Yarn
-                            </div>
-                        </div>
-                    </div>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm">
-                    350 LKR 
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        &nbsp; Active &nbsp;
-                    </span>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                    <a href="#" class="text-gray-500 hover:text-gray-300">Edit</a>
-                    <a href="#" class="ml-4 text-gray-500 hover:text-red-600">Delete</a>
-                </td>
-            </tr>
+            @foreach ($yarns as $yarn)
 
             <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
                         <div>
                             <div class="text-m">
-                              Velvet 
+                                {{ $yarn->type }}
                             </div>
                             <div class="text-sm text-gray-500">
-                                Yo Yarn
+                                {{ $yarn->supplier }}
                             </div>
                         </div>
                     </div>
                 </td>
+
                 <td class="px-6 py-4 whitespace-nowrap text-sm">
-                   500 LKR 
+                    {{ $yarn->price }} LKR
                 </td>
+
                 <td class="px-6 py-4 whitespace-nowrap">
+                    @if ($yarn->enabled)
                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                         &nbsp; Active &nbsp;
                     </span>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                    <a href="#" class="text-gray-500 hover:text-gray-300">Edit</a>
-                    <a href="#" class="ml-4 text-gray-500 hover:text-red-600">Delete</a>
-                </td>
-            </tr>
 
-            <tr>
-                <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="flex items-center">
-                        <div>
-                            <div class="text-m">
-                                Acrylic 
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                Ali-Express
-                            </div>
-                        </div>
-                    </div>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm">
-                   800 LKR 
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap">
+                    @else
                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                       Disabled 
+                        Disabled
                     </span>
+                    @endif
+
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
                     <a href="#" class="text-gray-500 hover:text-gray-300">Edit</a>
                     <a href="#" class="ml-4 text-gray-500 hover:text-red-600">Delete</a>
                 </td>
             </tr>
+            @endforeach
+
         </tbody>
     </table>
 </section>

@@ -9,7 +9,9 @@ class YarnController extends Controller
 {
     public function index()
     {
-        return view('yarn.index');
+        return view('yarn.index', [
+            'yarns' => Yarn::all()
+        ]);
     }
 
     public function store(Request $request)
