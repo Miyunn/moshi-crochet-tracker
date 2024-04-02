@@ -29,6 +29,23 @@ class YarnController extends Controller
         return redirect()->route('yarn.index')->with('status', 'yarn-added');
     }
 
+    public function update(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|exists:yarn,id',
+            'type' => 'required|string',
+            'price' => 'required|numeric',
+            'supplier' => 'required|string',
+            'enabled' => 'required|boolean',
+        ]);
+        $id = $request->id;
+        $yarn = Yarn::find($id);
+
+        $yarn->update($request->all());
+
+        return redirect()->route('yarn.index')->with('status', 'yarn-updated');
+    }
+
     public function destroy(Request $request)
     {
         $request->validate([

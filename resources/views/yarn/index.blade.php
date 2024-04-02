@@ -19,19 +19,8 @@
     </div>
 
     <x-modal name="add-yarn" focusable>
-        <div class="flex justify-between">
-            <div> </div>
-            <button class="text-blue-600 dark:text-gray-400 align-left p-3" x-on:click="$dispatch('close')">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg>
-            </button>
-        </div>
-
         <div class="flex items-center justify-center">
-            <div class="pb-4 sm:pb-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg w-full max-w-xl">
+            <div class="py-4 sm:pb-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg w-full max-w-xl">
                 @include('yarn.partials.add-yarn-form')
             </div>
         </div>

@@ -62,7 +62,12 @@
 
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                        <a href="#" class="text-gray-500 hover:text-gray-300">Edit</a>
+                        <button x-data=""
+                            x-on:click.prevent="$dispatch('open-modal', 'edit-yarn{{ $yarn->id }}')"
+                            class="text-gray-500 hover:text-gray-300">
+                            {{ __('Edit') }}
+                        </button>
+
                         <button x-data=""
                             x-on:click.prevent="$dispatch('open-modal', 'confirm-delete-yarn{{ $yarn->id }}')"
                             class="ml-4 text-gray-500 hover:text-red-600">
@@ -72,6 +77,7 @@
                 </tr>
 
                 @include('yarn.partials.delete-yarn-modal')
+                @include('yarn.partials.edit-yarn-modal')
             @endforeach
 
 
