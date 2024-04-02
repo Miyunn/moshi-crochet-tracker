@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __("Manage your yarn from here") }}
+            {{ __('Manage your yarn from here') }}
         </p>
     </header>
 
@@ -13,7 +13,7 @@
         <thead class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300">
             <tr>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-                   Type
+                    Type
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                     Price
@@ -29,45 +29,55 @@
 
         <tbody class="border-gray-300 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-300">
             @foreach ($yarns as $yarn)
-
-            <tr>
-                <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="flex items-center">
-                        <div>
-                            <div class="text-m">
-                                {{ $yarn->type }}
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                {{ $yarn->supplier }}
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                            <div>
+                                <div class="text-m">
+                                    {{ $yarn->type }}
+                                </div>
+                                <div class="text-sm text-gray-500">
+                                    {{ $yarn->supplier }}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </td>
+                    </td>
 
-                <td class="px-6 py-4 whitespace-nowrap text-sm">
-                    {{ $yarn->price }} LKR
-                </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm">
+                        {{ $yarn->price }} LKR
+                    </td>
 
-                <td class="px-6 py-4 whitespace-nowrap">
-                    @if ($yarn->enabled)
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        &nbsp; Active &nbsp;
-                    </span>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        @if ($yarn->enabled)
+                            <span
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                &nbsp; Active &nbsp;
+                            </span>
+                        @else
+                            <span
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                Disabled
+                            </span>
+                        @endif
 
-                    @else
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                        Disabled
-                    </span>
-                    @endif
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
+                        <a href="#" class="text-gray-500 hover:text-gray-300">Edit</a>
+                        <button x-data=""
+                            x-on:click.prevent="$dispatch('open-modal', 'confirm-delete-yarn{{ $yarn->id }}')"
+                            class="ml-4 text-gray-500 hover:text-red-600">
+                            {{ __('Delete') }}
+                        </button>
+                    </td>
+                </tr>
 
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                    <a href="#" class="text-gray-500 hover:text-gray-300">Edit</a>
-                    <a href="#" class="ml-4 text-gray-500 hover:text-red-600">Delete</a>
-                </td>
-            </tr>
+                @include('yarn.partials.delete-yarn-modal')
             @endforeach
+
 
         </tbody>
     </table>
+
+
+
 </section>

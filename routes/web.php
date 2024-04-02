@@ -38,7 +38,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/yarn', [YarnController::class, 'index'])->name('yarn.index');
     Route::post('/yarn', [YarnController::class, 'store'])->name('yarn.store');
-    Route::patch('yarn', [YarnController::class, 'update'])->name('yarn.update');
+    Route::patch('/yarn', [YarnController::class, 'update'])->name('yarn.update');
+    Route::delete('/yarn', [YarnController::class, 'destroy'])->name('yarn.delete');
 });
 
 

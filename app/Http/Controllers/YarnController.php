@@ -24,8 +24,20 @@ class YarnController extends Controller
 
         ]);
 
-        $yarn = Yarn::create($request->all());
+        Yarn::create($request->all());
 
         return redirect()->route('yarn.index')->with('status', 'yarn-added');
+    }
+
+    public function destroy(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|exists:yarn,id'
+        ]);
+
+        $id = $request->id;
+        Yarn::destroy($id);
+
+        return redirect()->route('yarn.index')->with('status', 'yarn-deleted');
     }
 }
