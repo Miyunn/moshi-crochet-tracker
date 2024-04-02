@@ -7,13 +7,11 @@
                 </h2>
             </header>
 
-            <form method="POST" action="{{ route('yarn.update') }}"
-                class="mt-5 >
+            <form method="POST" action="{{ route('yarn.update') }}" class="mt-5">
                 @csrf
                 @method('PATCH')
 
-                <input type="hidden"
-                name="id" value="{{ $yarn->id }}">
+                <input type="hidden" name="id" value="{{ $yarn->id }}">
                 <input type="hidden" name="type" value="{{ $yarn->type }}">
 
                 <div class="pb-3">
