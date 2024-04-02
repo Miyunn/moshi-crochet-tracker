@@ -43,7 +43,18 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//Profile routes
+// Order routes
+Route::get('/orders', function () {
+    return view('orders.index');
+})->middleware(['auth', 'verified'])->name('orders.index');
+
+
+Route::get('/customers', function () {
+    return view('customers.index');
+})->middleware(['auth', 'verified'])->name('customers.index');
+
+
+// Profile routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
