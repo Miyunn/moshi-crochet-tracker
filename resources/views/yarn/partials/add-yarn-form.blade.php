@@ -4,7 +4,7 @@
             {{ __('Add new Yarn') }}
         </h2>
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Add more Yarn types from here') }}
+            {{ __('Enable display in quotaiton for the price to be autofilled during quotation generation') }}
         </p>
     </header>
 

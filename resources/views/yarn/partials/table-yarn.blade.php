@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Manage your yarn from here') }}
+            {{ __('You can update or delete yarn from here') }}
         </p>
     </header>
 
@@ -50,17 +50,18 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                         @if ($yarn->enabled)
                             <span
-                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 dark:bg-green-200 text-green-800">
                                 &nbsp; Active &nbsp;
                             </span>
                         @else
                             <span
-                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 dark:bg-red-200 text-red-800">
                                 Disabled
                             </span>
                         @endif
 
                     </td>
+
                     <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
                         <button x-data=""
                             x-on:click.prevent="$dispatch('open-modal', 'edit-yarn{{ $yarn->id }}')"
@@ -80,10 +81,6 @@
                 @include('yarn.partials.edit-yarn-modal')
             @endforeach
 
-
         </tbody>
     </table>
-
-
-
 </section>

@@ -1,5 +1,5 @@
 <x-modal name="confirm-delete-yarn{{ $yarn->id }}" focusable>
-    <form method="post" action="{{ route('yarn.delete') }}" class="p-6">
+    <form method="post" action="{{ route('yarn.delete') }}" class="p-3">
         @csrf
         @method('delete')
 
