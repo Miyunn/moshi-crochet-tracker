@@ -1,4 +1,4 @@
-<section>
+<section class = "p-6">
     <x-heading-sub value="{{ __('Yarn') }}" />
     {{-- This UI needs to be thought over again --}}
 
@@ -16,7 +16,7 @@
             @endforeach
 
         <x-input-error :messages="$errors->calculateYarn->get('yarn_id')" class="mt-2" />
-            --}}
+         --}}
 
         <div class="mt-2">
             <x-text-input id="update_password_current_password" name="current_password" type="text"
