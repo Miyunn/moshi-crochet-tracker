@@ -5,6 +5,9 @@
         </h2>
     </x-slot>
 
+    <x-notification-box title="{{ __('Test') }}" description="{{ __('The user has logged in successfully') }}"
+        size="{{ __('15rem') }}" />
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
