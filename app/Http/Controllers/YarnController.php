@@ -42,8 +42,10 @@ class YarnController extends Controller
         $yarn = Yarn::find($id);
 
         $yarn->update($request->all());
-
-        return redirect()->route('yarn.index')->with('status', 'yarn-updated');
+        return redirect()->route('yarn.index')->with([
+            'status' => 'yarn-updated',
+            'updated-id' => $id,
+        ]);
     }
 
     public function destroy(Request $request)
