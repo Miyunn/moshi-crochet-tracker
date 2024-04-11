@@ -81,6 +81,11 @@
                 @include('yarn.partials.edit-yarn-modal')
             @endforeach
 
+            @if (session('status') === 'yarn-deleted')
+                <x-notification-box title="{{ __('Yarn Deleted') }}"
+                    description="{{ __('The yarn has been deleted successfully') }}" size="15rem" />
+            @endif
+
         </tbody>
     </table>
 </section>
