@@ -31,8 +31,7 @@
     @endif
 
     @if (session('status') === 'yarn-added')
-        <x-notification-box title="{{ __('Saved') }}"
-            description="{{ __('New yarn was added to the collection') }}" />
+        <x-notification-box title="{{ __('Saved') }}" description="{{ __('New yarn added to the collection') }}" />
     @endif
 
     @if (session('status') === 'yarn-updated')
