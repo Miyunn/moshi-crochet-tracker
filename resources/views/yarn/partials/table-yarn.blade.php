@@ -1,12 +1,14 @@
 <section>
-    <header>
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-            {{ __('All Yarn') }}
-        </h2>
-
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('You can update or delete yarn from here') }}
-        </p>
+    <header class="flex justify-between">
+        <div>
+            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                {{ __('All Yarn') }}
+            </h2>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                {{ __('You can update or delete yarn from here') }}
+            </p>
+        </div>
+        @include('yarn.partials.control-yarn')
     </header>
 
     <table class="table min-w-full divide-y divide-gray-200 dark:divide-gray-600 overflow-x-auto mt-6">

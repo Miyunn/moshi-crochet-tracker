@@ -4,7 +4,6 @@
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                 {{ __('Manage Yarn') }}
             </h2>
-            @include('yarn.partials.control-yarn')
         </div>
     </x-slot>
 
