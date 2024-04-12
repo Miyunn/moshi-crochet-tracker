@@ -44,11 +44,6 @@
             </x-secondary-button>
         </div>
 
-        @if (session('status') === 'yarn-added')
-            <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2501)"
-                class="text-sm text-gray-599 dark:text-gray-400">{{ __('Saved.') }}</p>
-        @endif
-
         @if ($errors->any())
             <div class="text-red-500 text-sm">
                 <ul>
