@@ -2,36 +2,28 @@
 
 {{-- The face in animation need to be added to this --}}
 <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3501)"
-    class="shadow-lg rounded-lg bg-white dark:bg-white mx-auto m-8 p-4 notification-box flex absolute right-5 bottom-2 overflow-hidden shadow-xl transform transition-all"
+    class="flex absolute right-5 bottom-5 transform transition-all"
     x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200"
     x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
-    <div class="pr-2">
-        <svg class="fill-current text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-            height="24">
-            <path class="heroicon-ui"
-                d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 9a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-        </svg>
-    </div>
-    <div>
-        <div class="text-sm pb-2">
-            {{ $title }}
-            <span class="float-right cursor-pointer" x-on:click="show = false">
-                <svg class="fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    width="22" height="22">
-                    <path class="heroicon-ui"
-                        d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z" />
-                </svg>
-            </span>
-        </div>
-        <div class="text-sm text-gray-600  tracking-tight ">
-            {{ $description }}
+    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-on:click="show = false">
+    <div class='flex flex-col gap-3'>
+        <div class="bg-white relative border border-gray-200 rounded-lg shadow-lg">
+            <div class="flex items-center p-4">
+                <div class="mr-5 overflow-hidden">
+                    <button onClick='return this.parentNode.remove()' class="absolute p-1 top-1 right-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <p class="font-medium text-gray-900">{{ $title }}</p>
+                    <p class="max-w-xs text-sm text-gray-500">
+                        {{ $description }}
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<style>
-    .notification-box {
-        width: {{ $size }};
-    }
-</style>

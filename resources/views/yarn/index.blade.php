@@ -25,4 +25,18 @@
             </div>
         </div>
     </x-modal>
+
+    @if (session('status') === 'yarn-deleted')
+        <x-notification-box title="{{ __('Yarn Deleted') }}"
+            description="{{ __('The yarn has been deleted successfully') }}" size="15rem" />
+    @endif
+
+    @if (session('status') === 'yarn-added')
+        <x-notification-box title="{{ __('Saved') }}" description="{{ __('New yarn was added to the collection') }}"
+            size="15rem" />
+    @endif
+
+    @if (session('status') === 'yarn-updated')
+        <x-notification-box title="{{ __('Updated') }}" description="{{ __('Yarn was updated') }}" size="12rem" />
+    @endif
 </x-app-layout>
